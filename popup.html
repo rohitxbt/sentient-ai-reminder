@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Smart Reminder</title>
+    <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 AI Smart Reminder</h1>
+            <p>AI will understand your tasks and set smart reminders</p>
+        </div>
+        
+        <div class="form-section">
+            <div class="input-group">
+                <label for="taskInput">Tell me your tasks:</label>
+                <textarea id="taskInput" placeholder="e.g: Meeting at 2 PM, gym at 5 PM, dinner at 9 PM... You can also set specific timing!"></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label for="contextInput">Extra details (optional):</label>
+                <input type="text" id="contextInput" placeholder="Important deadlines, preferences, custom timing...">
+            </div>
+            
+            <button id="addTask" class="btn-primary">
+                <span>🎯 Give Task to AI</span>
+                <div class="loading" id="loading"></div>
+            </button>
+        </div>
+        
+        <div class="status-section">
+            <div id="status" class="status-message"></div>
+        </div>
+        
+        <div class="tasks-section">
+            <h3>📋 Active Reminders</h3>
+            <div id="tasksList" class="tasks-list">
+                <div class="no-tasks">No active reminders</div>
+            </div>
+        </div>
+        
+        <div class="settings-section">
+            <button id="testNotification" class="btn-secondary">🔔 Test Notification & Sound</button>
+            <button id="clearAll" class="btn-danger">🗑️ Clear All</button>
+        </div>
+        
+        <div class="info-section">
+            <div class="info-box">
+                <h4>💡 Pro Tips:</h4>
+                <ul>
+                    <li>You can set specific timing: "Remind me at 3:30 PM"</li>
+                    <li>Use natural language: "Meeting tomorrow at 10 AM"</li>
+                    <li>AI will set multiple reminders for important tasks</li>
+                    <li>Click anywhere on page first to enable sound</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <script src="popup.js"></script>
+</body>
+</html>
