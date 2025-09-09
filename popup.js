@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const taskText = taskInput.value.trim();
         
         if (!taskText) {
-            showStatus('Kuch toh likh diye task!', 'error');
+            showStatus('Write down some tasks!', 'error');
             return;
         }
 
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             if (response.success) {
-                showStatus('✅ AI ne samaj liya! Reminders set kar diye', 'success');
+                showStatus('✅ I understood it! I set it up', 'success');
                 taskInput.value = '';
                 contextInput.value = '';
                 loadTasks();
@@ -51,17 +51,17 @@ document.addEventListener('DOMContentLoaded', function() {
         chrome.runtime.sendMessage({
             action: 'testNotification'
         });
-        showStatus('🔔 Test notification bhej diya!', 'success');
+        showStatus('🔔 test notification sent!', 'success');
     });
 
     // Clear all tasks
     clearAllBtn.addEventListener('click', function() {
-        if (confirm('Sare reminders delete kar dena hai?')) {
+        if (confirm('All the Raminders need to be deleted?')) {
             chrome.runtime.sendMessage({
                 action: 'clearAllTasks'
             });
             loadTasks();
-            showStatus('🗑️ Sab clear kar diya!', 'success');
+            showStatus('🗑️ all cleared up!', 'success');
         }
     });
 
@@ -80,7 +80,7 @@ document.addEventListener('DOMContentLoaded', function() {
         } else {
             loading.classList.remove('show');
             addTaskBtn.disabled = false;
-            addTaskBtn.querySelector('span').textContent = '🎯 AI ko Task De';
+            addTaskBtn.querySelector('span').textContent = '🎯 Give the task to AI';
         }
     }
 
@@ -140,4 +140,5 @@ document.addEventListener('DOMContentLoaded', function() {
             loadTasks();
         }
     });
+
 });
